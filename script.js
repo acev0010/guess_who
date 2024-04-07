@@ -57,7 +57,7 @@ function unflipAll() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const toggleNotesButton = document.getElementById('toggleNotes');
+    const toggleNotesButton = document.getElementById('togglenotes');
     const notesContainer = document.querySelector('.notes-container');
 
     toggleNotesButton.addEventListener('click', function() {
