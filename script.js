@@ -1,9 +1,9 @@
-function flipCharacter(element) {
+function flipSmallCharacter(element) {
     // Get all character-small elements
-    let allCharacters = document.querySelectorAll('.character-small');
+    let allSmallCharacters = document.querySelectorAll('.character-small');
 
     // Remove flipped class from all character-small elements
-    allCharacters.forEach(char => {
+    allSmallCharacters.forEach(char => {
         char.classList.remove('flipped');
     });
 
@@ -11,12 +11,17 @@ function flipCharacter(element) {
     element.classList.toggle('flipped');
 }
 
+function flipLargeCharacter(element) {
+    // Toggle the flipped class on the clicked character
+    element.classList.toggle('flipped');
+}
+
 function randomizeCharacter() {
     // Get all character-small elements
-    let allCharacters = document.querySelectorAll('.character-small');
+    let allSmallCharacters = document.querySelectorAll('.character-small');
 
     // Remove flipped class from all character-small elements
-    allCharacters.forEach(char => {
+    allSmallCharacters.forEach(char => {
         char.classList.remove('flipped');
     });
 
@@ -27,15 +32,15 @@ function randomizeCharacter() {
 
     for (let i = 0; i <= iterations; i++) {
         setTimeout(() => {
-            randomIndex = Math.floor(Math.random() * allCharacters.length);
+            randomIndex = Math.floor(Math.random() * allSmallCharacters.length);
 
             // Remove flipped class from all character-small elements before adding it to the new one
-            allCharacters.forEach(char => {
+            allSmallCharacters.forEach(char => {
                 char.classList.remove('flipped');
             });
 
             // Add flipped class to the randomly selected character-small element
-            allCharacters[randomIndex].classList.add('flipped');
+            allSmallCharacters[randomIndex].classList.add('flipped');
 
             // Increase delay to slow down the animation
             delay += 50;
@@ -43,16 +48,18 @@ function randomizeCharacter() {
     }
 }
 
-
-
 function unflipAll() {
-    let allCharacters = document.querySelectorAll('.board#board1 .character');
-    allCharacters.forEach(char => {
+    let allLargeCharacters = document.querySelectorAll('.board#board1 .character');
+    allLargeCharacters.forEach(char => {
         char.classList.remove('flipped');
     });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleNotesButton = document.getElementById('toggleNotes');
+    const notesContainer = document.querySelector('.notes-container');
 
-
-
-
+    toggleNotesButton.addEventListener('click', function() {
+        notesContainer.classList.toggle('open');
+    });
+});
