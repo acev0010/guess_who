@@ -1,4 +1,4 @@
-function flipSmallCharacter(element) {
+function flipsmallcharacter(element) {
     // Get all character-small elements
     let allSmallCharacters = document.querySelectorAll('.character-small');
 
@@ -11,7 +11,7 @@ function flipSmallCharacter(element) {
     element.classList.toggle('flipped');
 }
 
-function flipLargeCharacter(element) {
+function fliplargecharacter(element) {
     // Toggle the flipped class on the clicked character
     element.classList.toggle('flipped');
 }
@@ -47,7 +47,6 @@ function randomizeCharacter() {
         }, i * delay);
     }
 }
-
 
 
 function unflipAll() {
