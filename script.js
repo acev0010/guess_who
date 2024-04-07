@@ -48,6 +48,8 @@ function randomizeCharacter() {
     }
 }
 
+
+
 function unflipAll() {
     let allLargeCharacters = document.querySelectorAll('.board#board1 .character');
     allLargeCharacters.forEach(char => {
